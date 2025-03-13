@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalones Wideleg Elastizado</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../mediaqueries.css">
+    <link rel="stylesheet" href="../productsStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <img src="../logo.png" alt="logo">
+            <input type="checkbox" id="toggle-menu">
+            <label for="toggle-menu" class="bars-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="navbar-list">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../index.html#about" class="navbar-link">Nosotros</a></li>
+                <li><a href="../../index.html#contact" class="navbar-link">Contacto</a></li>
+            </ul>
+            
+            <div class="nav-access">
+                
+                <div class="search-container">
+                    <div id="search-wrapper" class="search-wrapper" style="display: none;">
+                      <input type="text" id="search-input" placeholder="Buscar productos...">
+                      <div id="search-results" class="search-results"></div>
+                    </div>
+                    <button id="search-icon"><i class="fa-solid fa-search"></i></button>
+                  </div>
+                  
+                
+                
+                  <div class="user-icon">
+                    <a href="#"><i class="fa-solid fa-user"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Configuración</a></li>
+                        <li><a href="#">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+                
+                <div class="navbar-cart">
+                    <button id="cart-toggle">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span id="cart-count" style="display: none;">0</span>
+                    </button>
+                    <div id="cart" class="dropdown">
+                        <ul id="cart-items"></ul>
+                        <p id="total-price">Total: $0.00</p>
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="product-details">
+            <div class="product-container">
+                <div class="product-image">
+                    <img src="../../assets/clothes/pantm.webp" alt="Pantalones Wideleg Elastizado">
+                </div>
+
+                <div class="product-info">
+                    <h1>Pantalones Wideleg Elastizado</h1>
+                    <p class="product-description">
+                        Los pantalones Wideleg Elastizado ofrecen un ajuste cómodo y moderno. Perfectos para un look casual o elegante, son ideales para cualquier ocasión.
+                    </p>
+
+                    <div class="price">
+                        <span class="price-value">$39.987</span>
+                    </div>
+
+                    <div class="size-selection">
+                        <h3>Selecciona tu talle:</h3>
+                        <button class="size-button" data-size="38">38</button>
+                        <button class="size-button" data-size="40">40</button>
+                        <button class="size-button" data-size="42">42</button>
+                        <button class="size-button" data-size="44">44</button>
+                        <button class="size-button" data-size="46">46</button>
+                        <button class="size-button" data-size="48">48</button>
+                        <button class="size-button" data-size="50">50</button>
+                        <button class="size-button" data-size="52">52</button>
+                        <button class="size-button" data-size="54">54</button>
+                    </div>
+                    
+                    <h3>Cantidad:</h3>
+                    <input type="number" id="quantity-input" value="1" min="1" max="5" style="width: 50px; height: 40px; font-size: 16px; font-family: inherit; margin-right: 10px; text-align: center;" />
+                    
+                    <button id="add-to-cart" style="padding: 10px 20px; font-size: 16px;">Agregar al Carrito</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="product-reviews">
+            <div class="reviews-container">
+                <div class="reviews">
+                    <h2>Reseñas de Clientes</h2>
+                    <div class="review">
+                        <p class="review-text">"Son muy cómodos y se adaptan perfectamente al cuerpo."</p>
+                        <p class="review-author">- Ana L.</p>
+                    </div>
+                    <div class="review">
+                        <p class="review-text">"Me encanta el estilo, los uso para salir y son geniales."</p>
+                        <p class="review-author">- Jorge M.</p>
+                    </div>
+                </div>
+
+                <div class="comment-form">
+                    <h3>Deja tu comentario</h3>
+                    <form id="comment-form">
+                        <label for="comment-name">Nombre:</label>
+                        <input type="text" id="comment-name" name="name" required>
+        
+                        <label for="comment-email">Correo Electrónico:</label>
+                        <input type="email" id="comment-email" name="email" required>
+        
+                        <label for="comment-password">Contraseña:</label>
+                        <input type="password" id="comment-password" name="password" required>
+        
+                        <label for="comment-text">Comentario:</label>
+                        <textarea id="comment-text" name="comment" rows="4" required></textarea>
+        
+                        <button type="submit">Enviar Comentario</button>
+                        <button type="button" id="login-button">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div id="product-container" class="product-container"></div>
+
+    </main>
+
+    <footer class="black-bg">
+        <div class="container">
+            <div class="links-duo">
+                <div class="links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Cómo comprar</a></li>
+                        <li><a href="#">Consultas de stock</a></li>
+                        <li><a href="#">Envío y seguimiento</a></li>
+                        <li><a href="#">Formas de pago</a></li>
+                        <li><a href="#">Cambios y devoluciones</a></li>
+                    </ul>
+                </div>
+                <div class="links">
+                    <h3>Compañía</h3>
+                    <ul>
+                        <li><a href="#">Sobre Coastal®</a></li>
+                        <li><a href="#">Trabajá con nosotros</a></li>
+                        <li><a href="#">Mayorista</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="links-duo">
+                <div class="links">
+                    <h3>Ayuda</h3>
+                    <ul>
+                        <li><a href="#">Arrepentimiento</a></li>
+                        <li><a href="#">Libro de quejas</a></li>
+                        <li><a href="#">Atención al cliente</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Legales</a></li>
+                    </ul>
+                </div>
+                <div class="links">
+                    <h3>Seguinos</h3>
+                    <ul style="text-align: center;">
+                        <li><a href="#"><img src="../../icons/ig.png" alt="ig"></a></li>
+                        <li><a href="#"><img src="../../icons/fcb.png" alt="fb"></a></li>
+                        <li><a href="#"><img src="../../icons/xtw.png" alt="tw"></a></li>
+                        <li><a href="#"><img src="../../icons/ytb.png" alt="yt"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../main.js"></script>
+
+</body>
+</html>

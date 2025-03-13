@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/mediaqueries.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <img src="assets/logo.png" alt="logo">
+            <input type="checkbox" id="toggle-menu">
+            <label for="toggle-menu" class="bars-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="navbar-list">
+                <li><a href="index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="#about" class="navbar-link">Nosotros</a></li>
+                <li><a href="#contact" class="navbar-link">Contacto</a></li>
+            </ul>
+            
+            <div class="nav-access">
+                
+                <div class="search-container">
+                    <div id="search-wrapper" class="search-wrapper" style="display: none;">
+                      <input type="text" id="search-input" placeholder="Buscar productos...">
+                      <div id="search-results" class="search-results"></div>
+                    </div>
+                    <button id="search-icon"><i class="fa-solid fa-search"></i></button>
+                  </div>
+                  
+                
+                
+                <div class="user-icon">
+                    <a href="#"><i class="fa-solid fa-user"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="profile.html">Perfil</a></li>
+                        <li><a href="settings.html">Configuración</a></li>
+                        <li><a href="#">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+                
+                <div class="navbar-cart">
+                    <button id="cart-toggle">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span id="cart-count" style="display: none;">0</span>
+                    </button>
+                    <div id="cart" class="dropdown">
+                        <ul id="cart-items"></ul>
+                        <p id="total-price">Total: $0.00</p>
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section id="hero"> 
+            <div class="hero-presentation"> 
+                <h2>Oferta de intercambio.</h2> 
+                <br> 
+                <h1><span> Ofertas súper valiosas</span></h1> 
+                <h1 style="color: greenyellow;">en todos los productos.</h1> 
+                <br> 
+                <p style="font-size: 20px;"> 
+                    Ahorra más con cupones y hasta un 70% de descuento. 
+                </p> 
+                <br> 
+                <div class="button-container"> 
+                    <a href="#" class="primary-btn">Comprar Ya</a> 
+                    <a href="#" class="alt-btn">Mi Cuenta</a> 
+                </div> 
+            </div> 
+            <div class="hero-images">
+                <img src="assets/pexels-myco-libot-3831669-15433431.jpg" alt="Modelo 1">
+                <img src="assets/pexels-tarikulraana-9961661.jpg" alt="Modelo 2">
+                <img src="assets/pexels-zenish-waiba-313366334-13576122.jpg" alt="Modelo 3">
+            </div>
+
+
+
+
+        </section>
+        
+        <section id="about">
+            <h2 class="about-title">Sobre Nosotros</h2>
+            <div class="about-text">
+              <p>En Coastal, ofrecemos ropa elegante y cómoda que refleja los valores que nos definen como marca. Combinamos estilo y funcionalidad para que nuestros clientes se expresen con autenticidad en cada ocasión.</p>
+              <p>Nuestros valores principales son:</p>
+              <ul>
+                <li><strong>Calidad sin compromisos:</strong> Diseñamos con detalle y usamos materiales de alta calidad para garantizar confort y durabilidad.</li>
+                <li><strong>Innovación constante:</strong> Seguimos tendencias y tecnologías para ofrecer colecciones únicas.</li>
+                <li><strong>Sostenibilidad:</strong> Adoptamos prácticas responsables con el medio ambiente y las comunidades locales.</li>
+              </ul>
+              <p>Nuestra meta es inspirar confianza a través de la moda y superar expectativas, siendo un aliado en la construcción de un estilo personal y auténtico.</p>
+            </div>
+          </section>
+          
+        
+        
+        
+        
+    <section id="cards-section">
+        <div class="cards-title">
+        <h2>Algunos de nuestros productos:</h2>
+
+        </div>
+
+
+        <div class="filter-buttons">
+            <button class="filter" data-filter="camperas">Camperas</button> <!-- Nuevo filtro agregado -->
+            <button class="filter" data-filter="calzado">Calzado</button>
+            <button class="filter" data-filter="camisas">Camisas</button>
+            <button class="filter" data-filter="jeans">Jeans</button>
+            <button class="filter" data-filter="all">Todos</button>
+        </div>
+        
+    
+        <div id="product-container" class="product-container"></div>
+    
+        <div class="cards-container">
+            <div class="cards-benefits">
+                <div class="cards">
+                    <img src="icons/env.png" alt="#">
+                    <h2>Envíos a todo el país</h2>
+                    <h3>Recibí tus productos en casa</h3>
+                </div>
+                <div class="cards">
+                    <img src="icons/tarj.png" alt="#">
+                    <h2>Todos los medios de pago</h2>
+                    <h3>Tarjetas de crédito, débito, o transferencia.</h3>
+                </div>
+            </div>
+            <div class="cards-benefits">
+                <div class="cards">
+                    <img src="icons/whats.png" alt="#">
+                    <h2>Comprá por Whatsapp</h2>
+                    <h3>Asesoramiento personalizado</h3>
+                </div>
+                <div class="cards">
+                    <img src="icons/devol.png" alt="#">
+                    <h2>Cambios y Devoluciones</h2>
+                    <h3>Hasta un solo cambio por producto</h3>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Modal para Mao Lisa Entallada -->
+        <div id="maolisaModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="product-container">
+                    <div class="product-image">
+                        <img src="../../assets/clothes/cami.webp" alt="Mao Lisa Entallada">
+                    </div>
+                    <div class="product-info">
+                        <h1 id="modal-product-name">Mao Lisa Entallada</h1>
+                        <p class="product-description">
+                            Prenda de estilo único, diseñada para quienes buscan una combinación entre elegancia y comodidad.
+                        </p>
+                        <div class="price">
+                            <span class="price-value" id="modal-product-price">$34.987</span>
+                        </div>
+                        <div class="size-selection">
+                            <h3>Tamaño:</h3>
+                            <select id="size-select">
+                                <option value="" disabled selected>Selecciona un tamaño</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>                    
+                        <h3>Cantidad:</h3>
+                        <input type="number" id="quantity-input" value="1" min="1" max="5" style="width: 50px; height: 40px; font-size: 16px; font-family: inherit; margin-right: 10px; text-align: center;" />
+                        <button id="add-to-cart-confirm" style="padding: 10px 20px; font-size: 16px;">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal para Kentucky John L. Cook -->
+    <div id="kentuckyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="product-container">
+                <div class="product-image">
+                    <img src="../../assets/clothes/camim.webp" alt="Kentucky John L. Cook">
+                </div>
+                <div class="product-info">
+                    <h1>Kentucky John L. Cook</h1>
+                    <p class="product-description">
+                        Perfecta para quienes buscan un estilo clásico y elegante. Confeccionada con materiales de alta calidad, ofrece comodidad y un ajuste perfecto para cualquier ocasión.
+                    </p>
+                    <div class="price">
+                        <span class="price-value">$66.663</span>
+                    </div>
+                    <div class="size-selection">
+                        <h3>Tamaño:</h3>
+                        <select id="size-select">
+                            <option value="" disabled selected>Selecciona un tamaño</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>                
+                    <h3>Cantidad:</h3>
+                    <input type="number" id="quantity-input" value="1" min="1" max="5" style="width: 50px; height: 40px; font-size: 16px; font-family: inherit; margin-right: 10px; text-align: center;" />
+                    <button id="add-to-cart-confirm" style="padding: 10px 20px; font-size: 16px;">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+        <!-- Modal para Mockba By Farenheite Gentto Azul -->
+        <div id="mockbaModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="product-container">
+                    <div class="product-image">
+                        <img src="../../assets/clothes/camp.webp" alt="Mockba By Farenheite Gentto Azul">
+                    </div>
+                    <div class="product-info">
+                        <h1>Mockba By Farenheite Gentto Azul</h1>
+                        <p class="product-description">
+                            Prenda de estilo único, diseñada para quienes buscan una combinación entre elegancia y comodidad.
+                        </p>
+                        <div class="price">
+                            <span class="price-value">$39.987</span>
+                        </div>
+                        <div class="size-selection">
+                            <h3>Tamaño:</h3>
+                            <select id="size-select">
+                                <option value="" disabled selected>Selecciona un tamaño</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>                    
+                        <h3>Cantidad:</h3>
+                        <input type="number" id="quantity-input" value="1" min="1" max="5" style="width: 50px; height: 40px; font-size: 16px; font-family: inherit; margin-right: 10px; text-align: center;" />
+                        <button id="add-to-cart-confirm" style="padding: 10px 20px; font-size: 16px;">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal para Campera Tachas Negras -->
+        <div id="tachasModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="product-container">
+                    <div class="product-image">
+                        <img src="../../assets/clothes/campm.webp" alt="Campera Tachas Negras">
+                    </div>
+                    <div class="product-info">
+                        <h1>Campera Tachas Negras</h1>
+                        <p class="product-description">
+                            La elección perfecta para quienes buscan un look audaz y moderno.
+                        </p>
+                        <div class="price">
+                            <span class="price-value">$110.407</span>
+                        </div>
+                        <div class="size-selection">
+                            <h3>Tamaño:</h3>
+                            <select id="size-select">
+                                <option value="" disabled selected>Selecciona un tamaño</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>                    
+                        <h3>Cantidad:</h3>
+                        <input type="number" id="quantity-input" value="1" min="1" max="5" style="width: 50px; height: 40px; font-size: 16px; font-family: inherit; margin-right: 10px; text-align: center;" />
+                        <button id="add-to-cart-confirm" style="padding: 10px 20px; font-size: 16px;">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal para Zapatillas Urbana Livanas -->
+        <div id="urbanaModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="product-container">
+                    <div class="product-image">
+                        <img src="../../assets/clothes/zap.webp" alt="Zapatillas Urbana Livanas">
+                    </div>
+                    <div class="product-info">
+                        <h1>Zapatillas Urbana Livanas</h1>
+                        <p class="product-description">
+                            Perfectas para un estilo moderno y cómodo.
+                        </p>
+                        <div class="price">
+                            <span class="price-value">$17.590</span>
+                        </div>
+                        <div class="size-selection">
+                            <h3>Talle:</h3>
+                            <select id="talle-select">
+                                <option value="" disabled selected>Selecciona un talle</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="39.5">39.5</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="41.5">41.5</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="43.5">43.5</option>
+                                <option value="44">44</option>
+                                <option value="45.5">45.5</option>
+                            </select>
+                        </div>
+                        
+                        <h3>Cantidad:</h3>
+                        <input type="number" id="quantity-input" value="1" min="1" max="5" style="width: 50px; height: 40px; font-size: 16px; font-family: inherit; margin-right: 10px; text-align: center;" />
+                        <button id="add-to-cart-confirm" style="padding: 10px 20px; font-size: 16px;">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal para Zapatillas Jaguar 8575 -->
+        <div id="jaguarModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="product-container">
+                    <div class="product-image">
+                        <img src="../../assets/clothes/zapm.webp" alt="Zapatillas Jaguar 8575">
+                    </div>
+                    <div class="product-info">
+                        <h1>Zapatillas Jaguar 8575</h1>
+                        <p class="product-description">
+                            Ofrecen un diseño robusto y un confort excepcional.
+                        </p>
+                        <div class="price">
+                            <span class="price-value">$23.843</span>
+                        </div>
+                        <div class="size-selection">
+                            <h3>Talle:</h3>
+                            <select id="talle-select">
+                                <option value="" disabled selected>Selecciona un talle</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="39.5">39.5</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="41.5">41.5</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="43.5">43.5</option>
+                                <option value="44">44</option>
+                                <option value="45.5">45.5</option>
+                            </select>
+                        </div>
+                        
+                        <h3>Cantidad:</h3>
+                        <input type="number" id="quantity-input" value="1" min="1" max="5" style="width: 50px; height: 40px; font-size: 16px; font-family: inherit; margin-right: 10px; text-align: center;" />
+                        <button id="add-to-cart-confirm" style="padding: 10px 20px; font-size: 16px;">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal para Pantalones Stone Premium Tsumeb Jeans -->
+        <div id="stoneModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="product-container">
+                    <div class="product-image">
+                        <img src="../../assets/clothes/pant.webp" alt="Pantalones Stone Premium Tsumeb Jeans">
+                    </div>
+                    <div class="product-info">
+                        <h1>Stone Premium Tsumeb Jeans</h1>
+                        <p class="product-description">
+                            Combinan estilo y comodidad.
+                        </p>
+                        <div class="price">
+                            <span class="price-value">$23.931</span>
+                        </div>
+                        <div class="size-selection">
+                            <h3>Talle:</h3>
+                            <select id="talle-select-2">
+                                <option value="" disabled selected>Selecciona un talle</option>
+                                <option value="38">38</option>
+                                <option value="40">40</option>
+                                <option value="42">42</option>
+                                <option value="44">44</option>
+                                <option value="46">46</option>
+                                <option value="48">48</option>
+                                <option value="50">50</option>
+                                <option value="52">52</option>
+                                <option value="54">54</option>
+                            </select>
+                        </div>
+                        
+                        <h3>Cantidad:</h3>
+                        <input type="number" id="quantity-input" value="1" min="1" max="5" style="width: 50px; height: 40px; font-size: 16px; font-family: inherit; margin-right: 10px; text-align: center;" />
+                        <button id="add-to-cart-confirm" style="padding: 10px 20px; font-size: 16px;">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal para Pantalones Wideleg Elastizado -->
+        <div id="widelegModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="product-container">
+                    <div class="product-image">
+                        <img src="../../assets/clothes/pantm.webp" alt="Pantalones Wideleg Elastizado">
+                    </div>
+                    <div class="product-info">
+                        <h1>Wideleg Elastizado</h1>
+                        <p class="product-description">
+                            Ofrecen un ajuste cómodo y moderno.
+                        </p>
+                        <div class="price">
+                            <span class="price-value">$38.999</span>
+                        </div>
+                        <div class="size-selection">
+                            <h3>Talle:</h3>
+                            <select id="talle-select-2">
+                                <option value="" disabled selected>Selecciona un talle</option>
+                                <option value="38">38</option>
+                                <option value="40">40</option>
+                                <option value="42">42</option>
+                                <option value="44">44</option>
+                                <option value="46">46</option>
+                                <option value="48">48</option>
+                                <option value="50">50</option>
+                                <option value="52">52</option>
+                                <option value="54">54</option>
+                            </select>
+                        </div>
+                        
+                        <h3>Cantidad:</h3>
+                        <input type="number" id="quantity-input" value="1" min="1" max="5" style="width: 50px; height: 40px; font-size: 16px; font-family: inherit; margin-right: 10px; text-align: center;" />
+                        <button id="add-to-cart-confirm" style="padding: 10px 20px; font-size: 16px;">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="contact" class="black-bg">
+        <div class="info-container">
+            <div class="contact-info-container">
+                <div class="info-column">
+                    <h3>Información de Contacto</h3>
+                    <div class="info-data">
+                        <p><img src="icons/icons8-mapas-48.png" alt="">Dirección</p>
+                        <p><img src="icons/icons8-whatsapp-48.png" alt="">Teléfono</p>
+                        <p><img src="icons/icons8-gmail-48.png" alt="">Email</p>
+                    </div>
+                </div>
+                <div class="info-column">
+                    <h3>Hacé tu consulta</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="black-bg">
+        <div class="container">
+            <div class="links-duo">
+                <div class="links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Cómo comprar</a></li>
+                        <li><a href="#">Consultas de stock</a></li>
+                        <li><a href="#">Envío y seguimiento</a></li>
+                        <li><a href="#">Formas de pago</a></li>
+                        <li><a href="#">Cambios y devoluciones</a></li>
+                    </ul>
+                </div>
+                <div class="links">
+                    <h3>Compañía</h3>
+                    <ul>
+                        <li><a href="#">Sobre Coastal®</a></li>
+                        <li><a href="#">Trabajá con nosotros</a></li>
+                        <li><a href="#">Mayorista</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="links-duo">
+                <div class="links">
+                    <h3>Ayuda</h3>
+                    <ul>
+                        <li><a href="#">Arrepentimiento</a></li>
+                        <li><a href="#">Libro de quejas</a></li>
+                        <li><a href="#">Atención al cliente</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Legales</a></li>
+                    </ul>
+                </div>
+                <div class="links">
+                    <h3>Seguinos</h3>
+                    <ul style="text-align: center;">
+                        <li><a href="#"><img src="icons/ig.png" alt="ig"></a></li>
+                        <li><a href="#"><img src="icons/fcb.png" alt="fb"></a></li>
+                        <li><a href="#"><img src="icons/xtw.png" alt="tw"></a></li>
+                        <li><a href="#"><img src="icons/ytb.png" alt="yt"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
