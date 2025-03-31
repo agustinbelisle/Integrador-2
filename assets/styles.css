@@ -896,15 +896,15 @@ footer {
   opacity: 0.8;
 }
 
-
-
-
-
-
-
-
-
-
+.error-message {
+  color: red;
+  font-size: 12px;
+  visibility: hidden; 
+  height: 20px;
+}
+.invalid + .error-message {
+  visibility: visible;
+}
 
 
 

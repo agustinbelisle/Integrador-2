@@ -1,4 +1,3 @@
-
 let cart = [];
 let selectedSize = null; // Variable para almacenar el tamaño seleccionado
 
@@ -382,8 +381,11 @@ function displayProducts(filter = 'all') {
 // Función para ajustar columnas
 function adjustGridColumns(filter) {
     const productContainer = document.getElementById('product-container');
-    if (window.innerWidth <= 992) {
-        productContainer.style.gridTemplateColumns = `repeat(2, 1fr)`; // 2 columnas para pantallas <= 768px
+    
+    if (window.innerWidth <= 480) {
+        productContainer.style.gridTemplateColumns = `repeat(1, 1fr)`; // 1 columna para pantallas <= 480px
+    } else if (window.innerWidth <= 992) {
+        productContainer.style.gridTemplateColumns = `repeat(2, 1fr)`; // 2 columnas para pantallas <= 992px
     } else if (filter === 'all') {
         productContainer.style.gridTemplateColumns = `repeat(4, 1fr)`; // 4 columnas
     } else {
@@ -393,6 +395,7 @@ function adjustGridColumns(filter) {
     // Centrar el contenedor siempre
     productContainer.style.justifyContent = 'center';
 }
+
 
 // Escuchar el evento de redimensionamiento para ajustar las columnas en tiempo real
 window.addEventListener('resize', () => displayProducts());
@@ -418,6 +421,79 @@ document.querySelectorAll('.filter').forEach(button => {
     button.addEventListener('click', function() {
         const filterValue = this.getAttribute('data-filter');
         displayProducts(filterValue);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector("#contact-form");
+    const nameInput = document.querySelector("#name");
+    const emailInput = document.querySelector("#email");
+    const messageInput = document.querySelector("#message");
+
+    const showError = (input, message) => {
+        const formGroup = input.closest(".form-group");
+        let error = formGroup.querySelector(".error-message");
+
+        if (!error) {
+            error = document.createElement("span");
+            error.className = "error-message";
+            formGroup.appendChild(error);
+        }
+
+        error.textContent = message;
+        input.classList.add("invalid");
+    };
+
+    const clearError = (input) => {
+        const formGroup = input.closest(".form-group");
+        const error = formGroup.querySelector(".error-message");
+
+        if (error) {
+            error.remove();
+        }
+
+        input.classList.remove("invalid");
+    };
+
+    const validateInput = (input) => {
+        const id = input.id;
+        const value = input.value.trim();
+
+        if (id === "name" && value.length < 3) {
+            showError(input, "El nombre debe tener al menos 3 caracteres.");
+            return false;
+        } else if (id === "email") {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                showError(input, "El email no es válido.");
+                return false;
+            }
+        } else if (id === "message" && value.length < 10) {
+            showError(input, "El mensaje debe tener al menos 10 caracteres.");
+            return false;
+        }
+
+        clearError(input);
+        return true;
+    };
+
+    [nameInput, emailInput, messageInput].forEach((input) => {
+        input.addEventListener("input", () => validateInput(input));
+    });
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const isNameValid = validateInput(nameInput);
+        const isEmailValid = validateInput(emailInput);
+        const isMessageValid = validateInput(messageInput);
+
+        if (isNameValid && isEmailValid && isMessageValid) {
+            console.log("Formulario válido y enviado.");
+            form.reset();
+        } else {
+            console.log("Errores en el formulario.");
+        }
     });
 });
 
@@ -536,7 +612,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  
-  
-  
-  
+
