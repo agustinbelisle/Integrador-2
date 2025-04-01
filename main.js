@@ -473,16 +473,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
 
-        clearError(input);
         return true;
     };
 
-    [nameInput, emailInput, messageInput].forEach((input) => {
-        input.addEventListener("input", () => validateInput(input));
-    });
-
     form.addEventListener("submit", (event) => {
         event.preventDefault();
+
+        clearError(nameInput);
+        clearError(emailInput);
+        clearError(messageInput);
 
         const isNameValid = validateInput(nameInput);
         const isEmailValid = validateInput(emailInput);
@@ -496,6 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
 const searchInput = document.getElementById('search-input');
